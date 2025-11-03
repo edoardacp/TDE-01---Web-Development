@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Funções em JavaScript</title>
+</head>
+<body>
+  <h2>Atividade: Funções e Operações</h2>
+  <script>
+    // Operações básicas
+    function soma(a, b) {
+      return a + b;
+    }
+
+    function subtracao(a, b) {
+      return a - b;
+    }
+
+    function multiplicacao(a, b) {
+      return a * b;
+    }
+
+    function divisao(a, b) {
+      if (b === 0) {
+        return "Erro: divisão por zero!";
+      }
+      return a / b;
+    }
+
+    // Funções que manipulam arrays com arrow functions
+    const filtrarPares = (numeros) => numeros.filter((n) => n % 2 === 0);
+
+    const calcularMedia = (numeros) => {
+      const soma = numeros.reduce((acc, n) => acc + n, 0);
+      return soma / numeros.length;
+    };
+
+    // Callback
+    function executarOperacao(a, b, operacaoCallback) {
+      return operacaoCallback(a, b);
+    }
+
+    // Exemplos
+    console.log("Soma: 10 + 5 =", soma(10, 5));
+    console.log("Subtração: 10 - 5 =", subtracao(10, 5));
+    console.log("Multiplicação: 10 * 5 =", multiplicacao(10, 5));
+    console.log("Divisão: 10 / 5 =", divisao(10, 5));
+
+    const numeros = [1, 2, 3, 4, 5, 6];
+    console.log("Números pares:", filtrarPares(numeros));
+    console.log("Média dos números:", calcularMedia(numeros));
+
+    console.log("Usando callback (multiplicação) 6 * 7:", executarOperacao(6, 7, multiplicacao));
+  </script>
+</body>
+</html>
